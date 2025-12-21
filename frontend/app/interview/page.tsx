@@ -107,14 +107,14 @@ export default function InterviewPage() {
   };
 
   const ScoreBar = ({ label, score }: { label: string; score: number }) => {
-    const percentage = (score / 20) * 100;
+    const percentage = (score / 10) * 100;
     const color = percentage >= 70 ? 'bg-green-500' : percentage >= 50 ? 'bg-yellow-500' : 'bg-red-500';
     
     return (
       <div className="mb-3">
         <div className="flex justify-between mb-1">
           <span className="text-sm font-medium text-gray-700">{label}</span>
-          <span className="text-sm font-semibold text-gray-900">{score}/20</span>
+          <span className="text-sm font-semibold text-gray-900">{score}/10</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div className={`${color} h-2 rounded-full transition-all duration-500`} style={{ width: `${percentage}%` }}></div>
@@ -160,8 +160,8 @@ export default function InterviewPage() {
               <textarea
                 value={currentAnswer}
                 onChange={(e) => setCurrentAnswer(e.target.value)}
-                placeholder="Use the STAR method: Situation, Task, Action, Result..."
-                className="w-full h-64 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+                placeholder="Write your answer here..."
+                className="w-full h-64 p-4 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
                 disabled={loading}
               />
               
@@ -203,7 +203,7 @@ export default function InterviewPage() {
 
                 {/* Strengths */}
                 <div>
-                  <h3 className="text-lg font-bold text-green-700 mb-2">✓ Strengths</h3>
+                  <h3 className="text-lg font-bold text-green-700 mb-2">Strengths</h3>
                   <ul className="space-y-2">
                     {evaluation.strengths.map((strength, idx) => (
                       <li key={idx} className="flex items-start text-gray-700">
@@ -216,7 +216,7 @@ export default function InterviewPage() {
 
                 {/* Improvements */}
                 <div>
-                  <h3 className="text-lg font-bold text-orange-700 mb-2">→ Areas for Improvement</h3>
+                  <h3 className="text-lg font-bold text-orange-700 mb-2">Areas for Improvement</h3>
                   <ul className="space-y-2">
                     {evaluation.improvements.map((improvement, idx) => (
                       <li key={idx} className="flex items-start text-gray-700">
@@ -229,7 +229,7 @@ export default function InterviewPage() {
 
                 {/* Suggested Answer */}
                 <div className="bg-blue-50 rounded-lg p-4">
-                  <h3 className="text-lg font-bold text-blue-900 mb-2">💡 Suggested Improvement</h3>
+                  <h3 className="text-lg font-bold text-blue-900 mb-2">Suggested Improvement</h3>
                   <p className="text-gray-700">{evaluation.suggested_answer}</p>
                 </div>
 
@@ -246,19 +246,6 @@ export default function InterviewPage() {
             )
           )}
         </div>
-
-        {/* Tips Card */}
-        {!showFeedback && (
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <h3 className="font-semibold text-gray-900 mb-3">💡 Tips for a Strong Answer</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><strong>Situation:</strong> Set the context briefly</li>
-              <li><strong>Task:</strong> Explain what needed to be done</li>
-              <li><strong>Action:</strong> Describe your specific actions</li>
-              <li><strong>Result:</strong> Share the outcome with metrics if possible</li>
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );

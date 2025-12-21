@@ -193,7 +193,7 @@ export default function InterviewPage() {
 
                 {/* Strengths */}
                 <div>
-                  <h3 className="text-lg font-bold text-green-700 mb-2">✓ Strengths</h3>
+                  <h3 className="text-lg font-bold text-green-700 mb-2">Strengths</h3>
                   <ul className="space-y-2">
                     {evaluation.strengths.map((strength, idx) => (
                       <li key={idx} className="flex items-start text-gray-700">
@@ -206,7 +206,7 @@ export default function InterviewPage() {
 
                 {/* Improvements */}
                 <div>
-                  <h3 className="text-lg font-bold text-orange-700 mb-2">→ Areas for Improvement</h3>
+                  <h3 className="text-lg font-bold text-orange-700 mb-2">Areas for Improvement</h3>
                   <ul className="space-y-2">
                     {evaluation.improvements.map((improvement, idx) => (
                       <li key={idx} className="flex items-start text-gray-700">
@@ -219,7 +219,7 @@ export default function InterviewPage() {
 
                 {/* Suggested Answer */}
                 <div className="bg-blue-50 rounded-lg p-4">
-                  <h3 className="text-lg font-bold text-blue-900 mb-2">💡 Suggested Improvement</h3>
+                  <h3 className="text-lg font-bold text-blue-900 mb-2">Suggested Improvement</h3>
                   <p className="text-gray-700">{evaluation.suggested_answer}</p>
                 </div>
 

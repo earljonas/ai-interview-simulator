@@ -74,14 +74,14 @@ export default function Home() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Role Selection */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-black mb-2">
               Select Your Role
             </label>
             <select
               required
               value={formData.role}
               onChange={(e) => setFormData({ ...formData, role: e.target.value, focus_area: '' })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             >
               <option value="">Choose a role...</option>
               {roles.map(role => (
@@ -92,14 +92,14 @@ export default function Home() {
 
           {/* Seniority Selection */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-semibold text-black mb-2">
               Seniority Level
             </label>
             <select
               required
               value={formData.seniority}
               onChange={(e) => setFormData({ ...formData, seniority: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 text-black rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             >
               <option value="">Choose seniority...</option>
               {seniorities.map(level => (
@@ -111,14 +111,14 @@ export default function Home() {
           {/* Focus Area Selection */}
           {formData.role && (
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-black mb-2">
                 Focus Area
               </label>
               <select
                 required
                 value={formData.focus_area}
                 onChange={(e) => setFormData({ ...formData, focus_area: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full px-4 py-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               >
                 <option value="">Choose focus area...</option>
                 {focusAreas[formData.role as keyof typeof focusAreas]?.map(area => (
